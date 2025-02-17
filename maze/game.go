@@ -34,6 +34,12 @@ func (g *Game) X() int {
 func (g *Game) Y() int {
 	return g.posY
 }
+func (g *Game) Ymax() int {
+	return len(g.world) -1
+}
+func (g *Game) Xmax() int {
+	return len(g.world[0]) -1
+}
 
 func (g *Game) Draw() {
 	strs := make([]string, len(g.world))
@@ -50,4 +56,7 @@ func (g *Game) SetPosition(x, y int) {
 
 	g.world[g.Y()][g.X()] = 'X'
 	g.Draw()
+}
+func (g *Game) GetPosition(x, y int) rune {
+	return	g.world[g.Y()][g.X()] 
 }
