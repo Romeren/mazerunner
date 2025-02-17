@@ -38,6 +38,9 @@ S     |           |       |           |   |     | |
 			return maze.InputCapture(game, event)
 		},
 	)
+	go func() {
+		maze.AICapture(game)
+	}()
 	game.Draw()
 
 	if err := app.Run(); err != nil {
